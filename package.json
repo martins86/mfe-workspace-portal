@@ -1,6 +1,24 @@
 {
     "name": "mfe-workspace-portal",
     "version": "0.0.0",
+    "keywords": [],
+    "author": "Thiago Martins de Freitas",
+    "license": "MIT",
+    "email": "martins86@gmail.com",
+    "url": "https://www.linkedin.com/in/tmfreitas/",
+    "homepage": "https://martins86.github.io/mfe-workspace-portal/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/martins86/mfe-workspace-portal.git"
+    },
+    "bugs": {
+        "url": "https://github.com/martins86/mfe-workspace-portal/issues",
+        "email": "martins86@gmail.com"
+    },
+    "engines": {
+        "node": "~16.13.0",
+        "npm": "~8.1.0"
+    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
