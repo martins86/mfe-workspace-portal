@@ -32,7 +32,8 @@
         "pre-commit": "npx --no-install lint-staged && npm run lint && npm run test",
         "postinstall": "husky install",
         "test:dev": "ng test --code-coverage --progress --browsers Chrome",
-        "build:portal": "ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot"
+        "build:portal": "ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot",
+        "serve:portal": "ng serve --project=portal --port=5000 --host=0.0.0.0 --disable-host-check --open"
     },
     "private": true,
     "dependencies": {
