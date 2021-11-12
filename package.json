@@ -30,7 +30,9 @@
         "prettier-write": "npx prettier --write --ignore-unknown .",
         "prettier-check": "npx prettier --check .",
         "pre-commit": "npx --no-install lint-staged && npm run lint && npm run test",
-        "postinstall": "husky install"
+        "postinstall": "husky install",
+        "test:dev": "ng test --code-coverage --progress --browsers Chrome",
+        "build:portal": "ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot"
     },
     "private": true,
     "dependencies": {
