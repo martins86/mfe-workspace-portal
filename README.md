@@ -1,27 +1,192 @@
-# MfeWorkspacePortal
+# Micro Front-end: Portal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+## Informações
 
-## Development server
+Angular - [Link](https://angular.io/) <br />
+Angular Module Federation - [Angular Architects](https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/) - [Npmjs](https://www.npmjs.com/package/@angular-architects/module-federation-tools/v/12.4.0) <br />
+ESLint builder - [Link](https://github.com/angular-eslint/angular-eslint) <br />
+Prettier - [Link](https://prettier.io/) <br />
+Lint Staged - [Link](https://github.com/okonet/lint-staged#readme) <br />
+Husky - [Link](https://typicode.github.io/husky/#/) <br />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+## Dependências Globais
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+## Instalando o Angular Global
+npm install -g @angular/cli@12.2.13
+```
 
-## Build
+<br>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Comandos Usados
 
-## Running unit tests
+```sh
+## Criando workspace do portal
+ng new mfe-workspace-portal --create-application=false --commit=true --prefix=mfe
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+## Acessando o workspace
+cd mfe-workspace-portal
 
-## Running end-to-end tests
+# Adicionando eslint e incluindo no cli angular.json
+ng add @angular-eslint/schematics
+ng config cli.defaultCollection @angular-eslint/schematics
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```sh
+## Criando .eslintrc.json root
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {}
+    }
+  ]
+}
+```
 
-## Further help
+```sh
+## Gerando MFE app portal com eslint, routing e style
+ng g @angular-eslint/schematics:app portal --routing=true --strict=true --style=scss --prefix=mfe
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+## Instalando o ngx build plus e o module federation
+npm install ngx-build-plus @angular-architects/module-federation @angular-architects/module-federation-tools
+```
+
+```sh
+## Adicionando a configuração do module federation no mfe portal com a porta 5000
+ng add @angular-architects/module-federation --project=portal --port=5000
+```
+
+```sh
+## Server ou Build do Portal
+ng serve --project=portal --port=5000 --host=0.0.0.0 --disable-host-check --open
+
+ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot
+```
+
+```sh
+## Editando o .karma.conf.js
+# Adicionando mínimo de cobertura esperado
+thresholds: {
+  emitWarning: false,
+  global: {
+    statements: 80,
+    lines: 80,
+    branches: 80,
+    functions: 80,
+  },
+  each: {
+    statements: 80,
+    lines: 80,
+    branches: 80,
+    functions: 80,
+  },
+},
+
+# Adicionando coverage
+reporters: ["progress", "coverage", "kjhtml"],
+
+# Adicionando ChromeHeadless e tolerância para Timeout
+customLaunchers: {
+  ChromeHeadlessNoSandbox: {
+    base: "ChromeHeadless",
+    flags: ["--headless", "--no-sandbox", "--remote-debugging-port=9222"],
+  },
+},
+browserDisconnectTolerance: 8,
+browserNoActivityTimeout: 60000,
+browserDisconnectTimeout: 20000,
+captureTimeout: 210000,
+```
+
+```sh
+## Adicionando configuração do prettier
+# Criando o .prettierignore
+build
+coverage
+node_modules
+
+# Criando o .prettierrc.json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true
+}
+```
+
+```sh
+## Adicionando o Prettier, editando e checando
+npm install prettier --save-dev --save-exact
+
+# Editando e checando
+npx prettier --write --ignore-unknown .
+npx prettier --check .
+```
+
+```sh
+## Adicionando scripts do prettier no package.json
+npm set-script prettier-write "npx prettier --write --ignore-unknown ."
+npm set-script prettier-check "npx prettier --check ."
+```
+
+```sh
+## Adicionando o Husky
+npm install husky --save-dev
+npx husky install
+```
+
+```sh
+## Configurando o Husky
+npx husky add .husky/pre-commit "npm run pre-commit"
+
+# Adicionando scripts para husky no package.json
+npm set-script test "ng test --no-watch --no-progress --code-coverage --browsers ChromeHeadlessNoSandbox"
+npm set-script pre-commit "npx --no-install lint-staged && npm run lint && npm run test"
+npm set-script postinstall "husky install"
+```
+
+```sh
+## Adicionando scripts de serve:portal, test:dev e build:portal no package.json
+npm set-script serve:portal "ng serve --project=portal --port=5000 --host=0.0.0.0 --disable-host-check --open"
+npm set-script test:dev "ng test --code-coverage --progress --browsers Chrome"
+npm set-script build:portal "ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot"
+
+```
+
+```sh
+## Criando o .lintstagedrc.json
+{
+  "*.{js,jsx,ts,tsx,md,html,scss,json}": [
+    "npm run prettier-write",
+    "git add",
+    "npm run prettier-check"
+  ]
+}
+```
+
+```sh
+## Adicionando o Lint Staged
+npm install lint-staged --save-dev
+```
