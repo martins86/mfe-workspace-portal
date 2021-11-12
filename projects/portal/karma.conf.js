@@ -44,7 +44,7 @@ module.exports = function (config) {
         functions: 80,
       },
     },
-    reporters: ["progress", "kjhtml"],
+    reporters: ["progress", "coverage", "kjhtml"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -52,5 +52,15 @@ module.exports = function (config) {
     browsers: ["Chrome"],
     singleRun: false,
     restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: "ChromeHeadless",
+        flags: ["--headless", "--no-sandbox", "--remote-debugging-port=9222"],
+      },
+    },
+    browserDisconnectTolerance: 8,
+    browserNoActivityTimeout: 60000,
+    browserDisconnectTimeout: 20000,
+    captureTimeout: 210000,
   });
 };
