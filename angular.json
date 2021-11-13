@@ -33,7 +33,10 @@
               "projects/portal/src/favicon.ico",
               "projects/portal/src/assets"
             ],
-            "styles": ["projects/portal/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/portal/src/styles.scss"
+            ],
             "scripts": [],
             "extraWebpackConfig": "projects/portal/webpack.config.js",
             "commonChunk": false
@@ -108,7 +111,10 @@
               "projects/portal/src/favicon.ico",
               "projects/portal/src/assets"
             ],
-            "styles": ["projects/portal/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/portal/src/styles.scss"
+            ],
             "scripts": []
           }
         },
