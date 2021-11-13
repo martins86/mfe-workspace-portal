@@ -3,7 +3,7 @@ language: node_js
 os: linux
 
 node_js:
-  - "16"
+  - node
 
 dist: trusty
 
@@ -18,7 +18,7 @@ cache:
     - node_modules
 
 install:
-  - npm install -g @angular/cli
+  - npm install -g @angular/cli@12.2.13
   - npm install
 
 before_install:
