@@ -205,7 +205,7 @@ language: node_js
 os: linux
 
 node_js:
-  - node
+  - "16"
 
 dist: trusty
 
@@ -225,13 +225,15 @@ install:
 
 before_install:
   - export DISPLAY=:99.0
+  - export NODE_OPTIONS=--openssl-legacy-provider
   - sh -e /etc/init.d/xvfb start
 
 script:
+  - npm run lint
   - npm run test
   - npm run build:portal
   - cd dist/portal
-  - cp index.html
+  - cp index.html 404.html
 
 branches:
   only:
