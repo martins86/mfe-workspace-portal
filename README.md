@@ -219,7 +219,7 @@ language: node_js
 os: linux
 
 node_js:
-  - "16"
+  - node
 
 dist: trusty
 
