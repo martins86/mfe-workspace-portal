@@ -16,18 +16,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy()
   })
 
-  it(`should have as title 'portal'`, () => {
+  it(`should have as title 'Dashboard'`, () => {
     const fixture = TestBed.createComponent(AppComponent)
     const app = fixture.componentInstance
-    expect(app.title).toEqual('portal')
+    expect(app.title).toEqual('Dashboard')
   })
 
-  it('should render title', () => {
+  it('should render Dashboard', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'portal app is running!'
+    expect(compiled.querySelector('main h1')?.textContent).toContain(
+      'Dashboard'
     )
   })
 })
