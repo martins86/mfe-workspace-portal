@@ -1,4 +1,4 @@
-# Micro Front-end: Portal
+# Micro Front-end: Portal [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal)
 
 ## Informações
 
@@ -164,7 +164,7 @@ npx husky add .husky/pre-commit "npm run pre-commit"
 # Adicionando scripts para husky no package.json
 npm set-script test "ng test --no-watch --no-progress --code-coverage --browsers ChromeHeadlessNoSandbox"
 npm set-script pre-commit "npx --no-install lint-staged && npm run lint && npm run test"
-npm set-script postinstall "husky install"
+npm set-script postinstall "npx husky install"
 ```
 
 ```sh
@@ -189,4 +189,67 @@ npm set-script build:portal "ng build --project=portal --base-href ./ --single-b
 ```sh
 ## Adicionando o Lint Staged
 npm install lint-staged --save-dev
+```
+
+```sh
+## Adicionando o Travis CI
+# Criando o Token GITHUB_TOKEN_TRAVIS
+https://github.com/settings/tokens
+
+# martins86 / mfe-workspace-portal
+https://app.travis-ci.com/github/martins86/mfe-workspace-portal
+
+# Criando o .travis.yml
+language: node_js
+
+os: linux
+
+node_js:
+  - node
+
+dist: trusty
+
+sudo: required
+
+addons:
+  chrome: stable
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - npm install -g @angular/cli@12.2.13
+  - npm install
+
+before_install:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - npm run test
+  - npm run build:portal
+  - cd dist/portal
+  - cp index.html
+
+branches:
+  only:
+    - master
+
+env:
+  - EMBER_VERSION=release
+
+jobs:
+  fast_finish: true
+  allow_failures:
+    - env: EMBER_VERSION=release
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN_TRAVIS
+  local_dir: dist/portal
+  on:
+    branch: master
 ```
