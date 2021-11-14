@@ -255,3 +255,9 @@ deploy:
   on:
     branch: master
 ```
+
+```sh
+## Adicionando o modulo, rotas e component do layout padrão
+ng g m layout/default/ --module app --routing --project portal
+ng g c layout/default/ --project portal
+```
