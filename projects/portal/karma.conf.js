@@ -62,5 +62,5 @@ module.exports = function (config) {
     browserNoActivityTimeout: 60000,
     browserDisconnectTimeout: 20000,
     captureTimeout: 210000,
-  })
-}
+  });
+};
