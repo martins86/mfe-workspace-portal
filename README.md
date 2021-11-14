@@ -261,3 +261,8 @@ deploy:
 ng g m layout/default/ --module app --routing --project portal
 ng g c layout/default/ --project portal
 ```
+
+```sh
+## Adicionando o component da pagina não encontrada
+ng g c pages/not-found --project portal
+```
