@@ -192,20 +192,6 @@ npm install lint-staged --save-dev
 ```
 
 ```sh
-## Adicionando o Bootstrap
-npm install bootstrap@5.1.3
-
-# Editando o angular.json
-"styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
-  "projects/portal/src/styles.scss"
-],
-
-# Editando o src/styles.scss
-@import "~bootstrap/dist/css/bootstrap.min.css";
-```
-
-```sh
 ## Adicionando o Travis CI
 # Criando o Token GITHUB_TOKEN_TRAVIS
 https://github.com/settings/tokens

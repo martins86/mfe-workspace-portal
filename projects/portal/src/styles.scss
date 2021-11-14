@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
 @import './assets/styles/colors.scss';
 
 html,
@@ -10,6 +9,7 @@ body {
 body {
   background-color: $white;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 0.875rem;
   margin: 0;
 }
 
