@@ -70,7 +70,9 @@ ng g @angular-eslint/schematics:app portal --routing=true --strict=true --style=
 
 ```sh
 ## Instalando o ngx build plus e o module federation
-npm install ngx-build-plus @angular-architects/module-federation @angular-architects/module-federation-tools
+npm install ngx-build-plus@12.2.0
+npm install @angular-architects/module-federation@12.5.3
+npm install @angular-architects/module-federation-tools@12.5.3
 ```
 
 ```sh
@@ -152,6 +154,22 @@ npm set-script prettier-check "npx prettier --check ."
 ```
 
 ```sh
+## Criando o .lintstagedrc.json
+{
+  "*.{js,jsx,ts,tsx,md,html,scss,json}": [
+    "npm run prettier-write",
+    "git add",
+    "npm run prettier-check"
+  ]
+}
+```
+
+```sh
+## Adicionando o Lint Staged
+npm install lint-staged --save-dev
+```
+
+```sh
 ## Adicionando o Husky
 npm install husky --save-dev
 npx husky install
@@ -173,22 +191,6 @@ npm set-script serve:portal "ng serve --project=portal --port=5000 --host=0.0.0.
 npm set-script test:dev "ng test --code-coverage --progress --browsers Chrome"
 npm set-script build:portal "ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot"
 
-```
-
-```sh
-## Criando o .lintstagedrc.json
-{
-  "*.{js,jsx,ts,tsx,md,html,scss,json}": [
-    "npm run prettier-write",
-    "git add",
-    "npm run prettier-check"
-  ]
-}
-```
-
-```sh
-## Adicionando o Lint Staged
-npm install lint-staged --save-dev
 ```
 
 ```sh
