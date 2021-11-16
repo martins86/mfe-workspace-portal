@@ -23,19 +23,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      // For remotes (please adjust)
-      // name: "portal",
-      // filename: "remoteEntry.js",
-      // exposes: {
-      //     './Component': './projects/portal/src/app/app.component.ts',
-      // },
-
-      // For hosts (please adjust)
-      // remotes: {
-      //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
-
-      // },
-
+      remotes: {
+        dashboard:
+          'dashboard@https://martins86.github.io/mfe-workspace-dashboard/remoteEntry.js',
+      },
       shared: share({
         '@angular/core': {
           singleton: true,

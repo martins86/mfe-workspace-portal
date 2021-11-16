@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  mfeUrlPainel: 'http://localhost:5000/',
+  mfeUrlDashBoard: 'https://martins86.github.io/mfe-workspace-dashboard/',
 };
 
 /*
