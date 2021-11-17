@@ -310,3 +310,23 @@ ng g c layout/default/ --project portal
 ## Adicionando o component da pagina não encontrada
 ng g c pages/not-found --project portal
 ```
+
+```sh
+## Adicionando a biblioteca shared-lib com o layout/header
+ng g @angular-eslint/schematics:library shared-lib --prefix=lib
+
+# Remova os arquivos dentro de src/lib mantendo apenas o shared-lib.module.ts
+# Remova os imports do shared-lib.module.ts e os exports do public-api.ts
+# Adicionando o component header, *inclua o export no public-api.ts e no shared-lib.module.ts
+ng g c layout/header --project=shared-lib
+
+# Replicar as configs no karma.conf.js da shared-lib
+# Adicionando o path da shared-lib no tsconfig.json
+"paths": {
+  "shared-lib": [
+    "projects/shared-lib/src/public-api.ts",
+    "dist/shared-lib/shared-lib",
+    "dist/shared-lib"
+  ]
+},
+```
