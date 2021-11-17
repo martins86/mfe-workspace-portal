@@ -1,4 +1,4 @@
-# Micro Front-end: Portal [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal)
+# Micro Front-end: Portal [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=martins86_mfe-workspace-portal&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=martins86_mfe-workspace-portal)
 
 ## Informações
 
@@ -257,6 +257,47 @@ deploy:
   local_dir: dist/portal
   on:
     branch: master
+```
+
+```sh
+## Adicionando o sonar no projeto
+# Acesse o https://sonarcloud.io entre com sua conta do github [ara acesso aos projetos
+https://sonarcloud.io
+
+# Crie a empresa e adicione o repositório desejado, logo após ele executara um scan, finalizando o scan acesse o information para obter as keys do projeto
+https://sonarcloud.io/project/information?id=martins86_mfe-workspace-dashboard
+
+
+# Adicionando sonar-project.properties
+sonar.host.url=https://sonarcloud.io
+sonar.organization=martins86
+sonar.projectVersion=1.0
+sonar.projectName=martins86_mfe-workspace-dashboard
+sonar.projectKey=martins86_mfe-workspace-dashboard
+
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+
+sonar.exclusions=**/node_modules/**
+sonar.coverage.exclusions=**/*.js,src/main.ts,src/polyfills.ts,**/*environment*.ts,**/*module.ts
+
+sonar.tests=.
+sonar.test.inclusions=**/*.spec.ts,**/*test.ts
+
+sonar.typescript.tsconfigPath=tsconfig.json
+
+sonar.javascript.lcov.reportPaths=coverage/dashboard/lcov.info
+
+```
+
+```sh
+## Adicionando o reporter icov no karma.conf.js
+reporters: [
+  { type: 'html' },
+  { type: 'text-summary' },
+  { type: 'lcov' },
+],
+fixWebpackSourcePaths: true,
 ```
 
 ```sh
