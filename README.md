@@ -69,6 +69,82 @@ ng g @angular-eslint/schematics:app portal --routing=true --strict=true --style=
 ```
 
 ```sh
+## Adicionando o karma.root.conf.js
+module.exports = function () {
+  return {
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma'),
+    ],
+    client: {
+      jasmine: {},
+      clearContext: false, // leave Jasmine Spec Runner output visible in browser
+    },
+    jasmineHtmlReporter: {
+      suppressAll: true, // removes the duplicated traces
+    },
+    thresholds: {
+      emitWarning: false,
+      global: {
+        statements: 80,
+        lines: 80,
+        branches: 80,
+        functions: 80,
+      },
+      each: {
+        statements: 80,
+        lines: 80,
+        branches: 80,
+        functions: 80,
+      },
+    },
+    reporters: ['progress', 'coverage', 'kjhtml'],
+    port: 9876,
+    colors: true,
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: false,
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--headless', '--no-sandbox', '--remote-debugging-port=9222'],
+      },
+    },
+    browserDisconnectTolerance: 8,
+    browserNoActivityTimeout: 60000,
+    browserDisconnectTimeout: 20000,
+    captureTimeout: 210000,
+  };
+};
+
+```
+
+```sh
+## Editando o karma.conf.js (todos devem seguir essa estrutura, fora o __dirname)
+var getBaseKarmaConfig = require('./../../karma.root.conf');
+
+module.exports = function (config) {
+  var baseRootConfig = getBaseKarmaConfig();
+  config.set({
+    ...baseRootConfig,
+    coverageReporter: {
+      dir: require('path').join(__dirname, '../../coverage/shared-lib'),
+      subdir: '.',
+      reporters: [{ type: 'html' }, { type: 'text-summary' }, { type: 'lcov' }],
+      fixWebpackSourcePaths: true,
+    },
+    logLevel: config.LOG_INFO,
+  });
+};
+```
+
+```sh
 ## Instalando o ngx build plus e o module federation
 npm install ngx-build-plus@12.2.0
 npm install @angular-architects/module-federation@12.5.3
@@ -85,41 +161,6 @@ ng add @angular-architects/module-federation --project=portal --port=5000
 ng serve --project=portal --port=5000 --host=0.0.0.0 --disable-host-check --open
 
 ng build --project=portal --base-href ./ --single-bundle=true --output-hashing=none --vendor-chunk=false --aot
-```
-
-```sh
-## Editando o .karma.conf.js
-# Adicionando mínimo de cobertura esperado
-thresholds: {
-  emitWarning: false,
-  global: {
-    statements: 80,
-    lines: 80,
-    branches: 80,
-    functions: 80,
-  },
-  each: {
-    statements: 80,
-    lines: 80,
-    branches: 80,
-    functions: 80,
-  },
-},
-
-# Adicionando coverage
-reporters: ["progress", "coverage", "kjhtml"],
-
-# Adicionando ChromeHeadless e tolerância para Timeout
-customLaunchers: {
-  ChromeHeadlessNoSandbox: {
-    base: "ChromeHeadless",
-    flags: ["--headless", "--no-sandbox", "--remote-debugging-port=9222"],
-  },
-},
-browserDisconnectTolerance: 8,
-browserNoActivityTimeout: 60000,
-browserDisconnectTimeout: 20000,
-captureTimeout: 210000,
 ```
 
 ```sh
@@ -287,16 +328,6 @@ sonar.test.inclusions=**/*.spec.ts,**/*test.ts
 sonar.typescript.tsconfigPath=tsconfig.json
 
 sonar.javascript.lcov.reportPaths=coverage/lcov.info
-```
-
-```sh
-## Adicionando o reporter icov no karma.conf.js
-reporters: [
-  { type: 'html' },
-  { type: 'text-summary' },
-  { type: 'lcov' },
-],
-fixWebpackSourcePaths: true,
 ```
 
 ```sh
