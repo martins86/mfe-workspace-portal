@@ -272,22 +272,21 @@ https://sonarcloud.io/project/information?id=martins86_mfe-workspace-dashboard
 sonar.host.url=https://sonarcloud.io
 sonar.organization=martins86
 sonar.projectVersion=1.0
-sonar.projectName=martins86_mfe-workspace-dashboard
-sonar.projectKey=martins86_mfe-workspace-dashboard
+sonar.projectName=martins86_mfe-workspace-portal
+sonar.projectKey=martins86_mfe-workspace-portal
 
 sonar.sourceEncoding=UTF-8
-sonar.sources=.
+sonar.sources=projects
 
-sonar.exclusions=**/node_modules/**
+sonar.exclusions=**/node_modules/**,**/*.js
 sonar.coverage.exclusions=**/*.js,src/main.ts,src/polyfills.ts,**/*environment*.ts,**/*module.ts
 
-sonar.tests=.
+sonar.tests=app
 sonar.test.inclusions=**/*.spec.ts,**/*test.ts
 
 sonar.typescript.tsconfigPath=tsconfig.json
 
-sonar.javascript.lcov.reportPaths=coverage/dashboard/lcov.info
-
+sonar.javascript.lcov.reportPaths=coverage/lcov.info
 ```
 
 ```sh
