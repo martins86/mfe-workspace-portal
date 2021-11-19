@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { DefaultRoutingModule } from './default-routing.module';
 import { DefaultComponent } from './default.component';
 
+import { SharedLibModule } from '../../../../../shared-lib/src/lib/shared-lib.module';
+
 @NgModule({
   declarations: [DefaultComponent],
-  imports: [CommonModule, DefaultRoutingModule],
+  imports: [CommonModule, SharedLibModule, DefaultRoutingModule],
   exports: [DefaultComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
