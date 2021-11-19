@@ -15,7 +15,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "shared-lib": ["dist/shared-lib/shared-lib", "dist/shared-lib"]
+      "shared-lib": [
+        "projects/shared-lib/src/public-api.ts",
+        "dist/shared-lib/shared-lib",
+        "dist/shared-lib"
+      ]
     },
     "target": "es2017",
     "module": "es2020",
