@@ -4,10 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DefaultRoutingModule } from './default-routing.module';
 import { DefaultComponent } from './default.component';
 
-import {
-  HeaderModule,
-  FooterModule,
-} from './../../../../../shared-lib/src/public-api';
+import { HeaderModule, FooterModule } from 'shared-lib';
 
 const layoutLibModules = [HeaderModule, FooterModule];
 

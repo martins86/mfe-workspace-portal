@@ -46,7 +46,6 @@ module.exports = {
           strictVersion: true,
           requiredVersion: 'auto',
         },
-
         ...sharedMappings.getDescriptors(),
       }),
     }),
