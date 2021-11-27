@@ -366,3 +366,9 @@ ng g c layout/header --project=shared-lib
 ng g m layout/footer --project=shared-lib
 ng g c layout/footer --project=shared-lib
 ```
+
+```sh
+# Adicionando o module e component da lib btn-animated-menu-toggle, *inclua o export no public-api.ts do module
+ng g m component/btn-animated-menu-toggle --project=shared-lib
+ng g c component/btn-animated-menu-toggle --project=shared-lib
+```

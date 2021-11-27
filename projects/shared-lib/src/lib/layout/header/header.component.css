@@ -10,6 +10,10 @@ header {
   font-weight: 600;
 }
 
+header .menu-toggle {
+  margin-left: 16px;
+}
+
 header img {
   margin: 0 16px;
 }
