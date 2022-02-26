@@ -33,6 +33,10 @@ npm install -g @angular/cli@12.2.13
  -  [COMMANDS.md](./documents/COMMANDS.md)
 
 
+## Licença
+
+[MIT licensed](./LICENSE).
+
 
 [open-gitpod-img]: https://gitpod.io/button/open-in-gitpod.svg
 [open-gitpod-url]: https://www.gitpod.io/#https://github.com/martins86/mfe-workspace-portal
