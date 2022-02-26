@@ -8,9 +8,8 @@ describe('BtnAnimatedMenuToggleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BtnAnimatedMenuToggleComponent]
-    })
-      .compileComponents();
+      declarations: [BtnAnimatedMenuToggleComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

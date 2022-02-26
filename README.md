@@ -1,6 +1,7 @@
-# Micro Front-end: Portal 
+# Micro Front-end: Portal
 
 ## Badges
+
 [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal)
 ![GitHub package.json version][version-img]
 ![GitHub top language][language-img]
@@ -40,22 +41,20 @@ npm install -g @angular/cli@12.2.13
 
 ## Packages
 
-| Package                   | NPMJS                                     | Shields                                                                        |
-| ------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------ |
-| Husky                     | https://www.npmjs.com/package/husky       | ![GitHub package.json dependency version (dev dep on branch)][husky-img]       |
-| lint-staged               | https://www.npmjs.com/package/lint-staged | ![GitHub package.json dependency version (dev dep on branch)][lint-staged-img] |
+| Package     | NPMJS                                     | Shields                                                                        |
+| ----------- | ----------------------------------------- | ------------------------------------------------------------------------------ |
+| Husky       | https://www.npmjs.com/package/husky       | ![GitHub package.json dependency version (dev dep on branch)][husky-img]       |
+| lint-staged | https://www.npmjs.com/package/lint-staged | ![GitHub package.json dependency version (dev dep on branch)][lint-staged-img] |
 
 <br>
 
 ## Comandos Usados
 
- -  [COMMANDS.md](./documents/COMMANDS.md)
-
+- [COMMANDS.md](./documents/COMMANDS.md)
 
 ## Licença
 
 [MIT licensed](./LICENSE).
-
 
 <!-- Markdown link & images -->
 

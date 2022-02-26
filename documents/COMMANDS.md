@@ -2,7 +2,6 @@
 
 ### Seguindo a ordem de uso
 
-
 ```sh
 ## Criando workspace do portal
 ng new mfe-workspace-portal --create-application=false --commit=true --prefix=mfe

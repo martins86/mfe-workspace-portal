@@ -9,4 +9,4 @@ import { BtnAnimatedMenuToggleModule } from './../../component/btn-animated-menu
   imports: [CommonModule, BtnAnimatedMenuToggleModule],
   exports: [HeaderComponent],
 })
-export class HeaderModule { }
+export class HeaderModule {}
