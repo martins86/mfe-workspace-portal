@@ -21,9 +21,9 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start": "npm run serve:portal",
+    "build": "npm run build:portal",
+    "watch": "npm run build:portal -- --watch --configuration development",
     "test": "ng test --no-watch --no-progress --code-coverage --browsers ChromeHeadlessNoSandbox",
     "lint": "ng lint",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
