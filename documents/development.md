@@ -29,7 +29,7 @@ app/
             interfaces/ interfaces usadas só nessa pagina.
             not-found.module.ts/ modulo do not-found com imports e exports.
             not-found.routing.ts/ modulo para as rotas da not-found.
-    
+
     shared/ -> tudo que for reaproveitavel no protal.
         components/
         services/
