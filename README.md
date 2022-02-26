@@ -3,24 +3,27 @@
 ## Badges
 
 [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal)
-![GitHub package.json version][version-img]
-![GitHub top language][language-img]
-[![GitHub license][license-img]][license-url]
-![GitHub last commit][commit-img]
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=martins86_mfe-workspace-portal&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=martins86_mfe-workspace-portal)
+![GitHub package.json version][version-img]
 
-![npm][npm-img] ![node-current](https://img.shields.io/node/v/latest-version)
-
+![npm][npm-img]
+![node-current](https://img.shields.io/node/v/latest-version)
+![GitHub top language][language-img]
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+![GitHub last commit][commit-img]
+
+[![GitHub license][license-img]][license-url]
+
 <br>
 
-## GitPod
+## GitPod - VSCode On-line
 
 [![Open in Gitpod][open-gitpod-img]][open-gitpod-url]
 
 <br>
 
-## Informações
+# Informações usadas
 
 Angular - [Link](https://angular.io/) <br />
 Angular Module Federation - [Angular Architects](https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/) - [Npmjs](https://www.npmjs.com/package/@angular-architects/module-federation-tools/v/12.4.0) <br />
@@ -31,28 +34,12 @@ Husky - [Link](https://typicode.github.io/husky/#/) <br />
 
 <br>
 
-## Dependências Globais
+# Guia de passos
 
-```sh
-## Instalando o Angular Global
-npm install -g @angular/cli@12.2.13
-npm install -g commitizen
-```
+1.  Instalar programas e packages iniciais - [Link](./documents/npm-global-dependencies.md)
+2.  Dev - [Link](./documents/development.md)
 
 <br>
-
-## Packages
-
-| Package     | NPMJS                                     | Shields                                                                        |
-| ----------- | ----------------------------------------- | ------------------------------------------------------------------------------ |
-| Husky       | https://www.npmjs.com/package/husky       | ![GitHub package.json dependency version (dev dep on branch)][husky-img]       |
-| lint-staged | https://www.npmjs.com/package/lint-staged | ![GitHub package.json dependency version (dev dep on branch)][lint-staged-img] |
-
-<br>
-
-## Comandos Usados
-
-- [COMMANDS.md](./documents/COMMANDS.md)
 
 ## Licença
 
@@ -70,5 +57,3 @@ npm install -g commitizen
 [travis-url]: https://app.travis-ci.com/martins86/mfe-workspace-portal
 [commit-img]: https://img.shields.io/github/last-commit/martins86/mfe-workspace-portal
 [npm-img]: https://img.shields.io/npm/v/npm
-[husky-img]: https://img.shields.io/github/package-json/dependency-version/martins86/mfe-workspace-portal/dev/husky
-[lint-staged-img]: https://img.shields.io/github/package-json/dependency-version/martins86/mfe-workspace-portal/dev/lint-staged
