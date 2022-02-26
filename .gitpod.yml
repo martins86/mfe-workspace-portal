@@ -10,6 +10,7 @@ tasks:
   - init: echo n | npm i -g @angular/cli@12.2.13
   - command: >
       echo n | npm i  npm i -g @angular/cli@12.2.13 &&
+      npm install -g commitizen &&
       npm install &&
       sleep 6 &&
       npm run serve:portal
