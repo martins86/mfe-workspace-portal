@@ -1,11 +1,5 @@
 # Npm dependências globais do projeto
 
-## Ter instalado:
-
-- \*NodeJs - [Download]()
-
-#### **\*Obrigatório**
-
 <br>
 
 | Pacote      | Comando                             |
