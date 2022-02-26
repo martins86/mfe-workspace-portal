@@ -1,6 +1,10 @@
 # Comandos e códigos usados na implememtação
 
-### Seguindo a ordem de uso
+### Seguindo a ordem de uso, comandos e configurações usadas no projeto do portal.
+
+<br>
+
+# Primeiros passos
 
 ```sh
 ## Criando workspace do portal
@@ -215,6 +219,14 @@ npm set-script build:portal "ng build --project=portal --base-href ./ --single-b
 
 ```
 
+<br>
+
+---
+
+<br>
+
+## Adicionando o Travis CI
+
 ```sh
 ## Adicionando o Travis CI
 # Criando o Token GITHUB_TOKEN_TRAVIS
@@ -280,6 +292,14 @@ deploy:
     branch: master
 ```
 
+<br>
+
+---
+
+<br>
+
+## Adicionando o SonarCloud
+
 ```sh
 ## Adicionando o sonar no projeto
 # Acesse o https://sonarcloud.io entre com sua conta do github [ara acesso aos projetos
@@ -309,6 +329,14 @@ sonar.typescript.tsconfigPath=tsconfig.json
 
 sonar.javascript.lcov.reportPaths=coverage/lcov.info
 ```
+
+<br>
+
+---
+
+<br>
+
+## Criando components
 
 ```sh
 ## Adicionando o modulo, rotas e component do layout padrão
@@ -351,4 +379,37 @@ ng g c layout/footer --project=shared-lib
 # Adicionando o module e component da lib btn-animated-menu-toggle, *inclua o export no public-api.ts do module
 ng g m component/btn-animated-menu-toggle --project=shared-lib
 ng g c component/btn-animated-menu-toggle --project=shared-lib
+```
+
+<br>
+
+---
+
+<br>
+
+## Commits e Versionamento
+
+```sh
+## Instalando o Commitizen
+npm install -g commitizen
+```
+
+```sh
+## Instalando o Commitizen no projeto.
+npm install -D commitizen
+```
+
+```sh
+## Inicializando o configurador do changelog.
+commitizen init cz-conventional-changelog --save-dev --save-exact
+```
+
+```sh
+## Instalando o Standard Version no projeto.
+npm install -D standard-version
+```
+
+```sh
+## Adiconando o Script de release no package.json.
+npm set-script release "standard-version"
 ```

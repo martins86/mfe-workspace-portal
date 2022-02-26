@@ -11,6 +11,7 @@
 
 ![npm][npm-img] ![node-current](https://img.shields.io/node/v/latest-version)
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 <br>
 
 ## GitPod
@@ -35,6 +36,7 @@ Husky - [Link](https://typicode.github.io/husky/#/) <br />
 ```sh
 ## Instalando o Angular Global
 npm install -g @angular/cli@12.2.13
+npm install -g commitizen
 ```
 
 <br>
