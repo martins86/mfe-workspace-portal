@@ -38,6 +38,15 @@ npm install -g @angular/cli@12.2.13
 
 <br>
 
+## Packages
+
+| Package                   | NPMJS                                     | Shields                                                                        |
+| ------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------ |
+| Husky                     | https://www.npmjs.com/package/husky       | ![GitHub package.json dependency version (dev dep on branch)][husky-img]       |
+| lint-staged               | https://www.npmjs.com/package/lint-staged | ![GitHub package.json dependency version (dev dep on branch)][lint-staged-img] |
+
+<br>
+
 ## Comandos Usados
 
  -  [COMMANDS.md](./documents/COMMANDS.md)
