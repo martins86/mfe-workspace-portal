@@ -41,9 +41,9 @@ Husky - [Link](https://typicode.github.io/husky/#/) <br />
 
 <br>
 
-## Licença
+# Licença
 
-[MIT licensed](./LICENSE).
+mfe-workspace-portal is licensed under [MIT licensed](./LICENSE).
 
 <!-- Markdown link & images -->
 
