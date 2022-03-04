@@ -394,7 +394,7 @@ sonar.javascript.lcov.reportPaths=coverage/lcov.info
 
 <br>
 
-## Commits e Versionamento
+## Adicionando e configurando o Commits e Versionamento
 
 ```sh
 ## Instalando o Commitizen
@@ -417,8 +417,20 @@ npm install -D standard-version
 ```
 
 ```sh
-## Adiconando o Script de release no package.json.
+## Adicionando Commitlint
+npm add @commitlint/config-conventional @commitlint/cli -D
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+```
+
+```sh
+## Adicionando os Script no package.json.
 npm set-script release "standard-version"
+npm set-script commit "git-cz"
+```
+
+```sh
+## Adicionando commmitlint
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'
 ```
 
 <br>
