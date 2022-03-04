@@ -1,7 +1,5 @@
 # Micro Front-end: Portal
 
-## Badges
-
 [![Build Status](https://app.travis-ci.com/martins86/mfe-workspace-portal.svg?token=ifxsnzyowyXksHqjSXVp&branch=master)](https://app.travis-ci.com/martins86/mfe-workspace-portal)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=martins86_mfe-workspace-portal&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=martins86_mfe-workspace-portal)
 ![GitHub package.json version][version-img]
@@ -17,31 +15,25 @@
 
 <br>
 
-## GitPod - VSCode On-line
+# GitPod - VSCode On-line
 
 [![Open in Gitpod][open-gitpod-img]][open-gitpod-url]
 
 <br>
 
-# Informações usadas
+# Links e Referências
 
-Angular - [Link](https://angular.io/) <br />
-Angular Module Federation - [Angular Architects](https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/) - [Npmjs](https://www.npmjs.com/package/@angular-architects/module-federation-tools/v/12.4.0) <br />
-ESLint builder - [Link](https://github.com/angular-eslint/angular-eslint) <br />
-Prettier - [Link](https://prettier.io/) <br />
-Lint Staged - [Link](https://github.com/okonet/lint-staged#readme) <br />
-Husky - [Link](https://typicode.github.io/husky/#/) <br />
-
-<br>
-
-# Guia de passos
-
-1.  Instalar programas e packages iniciais - [Link](./documents/npm-global-dependencies.md)
-2.  Dev - [Link](./documents/development.md)
+- Angular - [Link](https://angular.io/) <br />
+- Angular Module Federation - [Angular Architects](https://www.angulararchitects.io/en/aktuelles/the-microfrontend-revolution-part-2-module-federation-with-angular/) - [Npmjs](https://www.npmjs.com/package/@angular-architects/module-federation-tools/v/12.4.0) <br />
+- ESLint builder - [Link](https://github.com/angular-eslint/angular-eslint) <br />
+- Prettier - [Link](https://prettier.io/) <br />
+- Lint Staged - [Link](https://github.com/okonet/lint-staged#readme) <br />
+- Husky - [Link](https://typicode.github.io/husky/#/) <br />
+- Jest - [Link](https://typicode.github.io/husky/#/) <br />
 
 <br>
 
-# Licença
+# Licença de uso
 
 mfe-workspace-portal is licensed under [MIT licensed](./LICENSE).
 

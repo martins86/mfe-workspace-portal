@@ -58,6 +58,4 @@ feat(page/home): criando o roteamentento.
 
 # Extenções do VSCode
 
-### já esta no recomendações.
-
-- [vscode conventional commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
+- vscode conventional commits - [Link](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
