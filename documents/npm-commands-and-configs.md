@@ -444,8 +444,6 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'
 ```sh
 ## Criando o layout padrão
 ng g m layout/default/ --module app --routing --project portal
-ng g m layout/default/header --project portal
-ng g m layout/default/footer --project portal
 
 ng g c layout/default/ --project portal
 ng g c layout/default/header --project portal
